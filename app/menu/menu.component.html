@@ -1,0 +1,20 @@
+<md-subheader class="md-no-sticky">Menu</md-subheader>
+<md-content>
+    <md-card>
+        <md-card-content layout="column">
+            <div class="row">
+                <div ng-repeat="menu in $ctrl.lstMenu" class="flex-menu menu-opcion">
+                    <div class="icono-span {{menu.color}}"> <!--  [routerLink]="[menu.url]" -->
+                        <span class="{{menu.imagen}}"></span>
+                    </div>
+                    <div class="informacion {{menu.claseFondo}}">
+                        <h3 class="titulo-menu">{{menu.name}}</h3>
+                        <div class="progress-bar">
+                            <div class="{{menu.claseIcono}}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </md-card-content>
+    </md-card>
+</md-content>

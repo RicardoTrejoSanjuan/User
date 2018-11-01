@@ -1,0 +1,45 @@
+<md-subheader class="md-no-sticky">User</md-subheader>
+
+<md-content>
+
+    <md-card>
+        <md-card-content layout="column">
+            <form name="calculator">
+                <br>
+                <input type="text" name="answer" ng-model="$ctrl.answer" ng-disabled="true">
+                <br>
+                <input type="button" value="MC" ng-click="$ctrl.memoryClear()">
+                <input type="button" value="M+" ng-click="$ctrl.memoryAdd()">
+                <input type="button" value="M-" ng-click="$ctrl.memorySubtractions()">
+                <input type="button" value="MS" ng-click="$ctrl.memoryStorage()">
+                <br>
+                <input type="button" value="CE" ng-click="$ctrl.clearError()">
+                <input type="button" value="C"  ng-click="$ctrl.clearFunction()">
+                <input type="button" value="<=" ng-click="$ctrl.delete()">
+                <input type="button" value="/" ng-click="$ctrl.answer = $ctrl.answer + '/'"> 
+                <!-- $ctrl.setOperator('/') -->
+                <br>
+                <input type="button" value="7" ng-click="$ctrl.answer = $ctrl.answer + '7'">
+                <input type="button" value="8" ng-click="$ctrl.answer = $ctrl.answer + '8'">
+                <input type="button" value="9" ng-click="$ctrl.answer = $ctrl.answer + '9'">
+                <input type="button" value="X" ng-click="$ctrl.answer = $ctrl.answer + '*'">
+                <br>
+                <input type="button" value="4" ng-click="$ctrl.answer = $ctrl.answer + '4'">
+                <input type="button" value="5" ng-click="$ctrl.answer = $ctrl.answer + '5'">
+                <input type="button" value="6" ng-click="$ctrl.answer = $ctrl.answer + '6'">
+                <input type="button" value="-" ng-click="$ctrl.answer = $ctrl.answer + '-'">
+                <br>
+                <input type="button" value="1" ng-click="$ctrl.answer = $ctrl.answer + '1'">
+                <input type="button" value="2" ng-click="$ctrl.answer = $ctrl.answer + '2'">
+                <input type="button" value="3" ng-click="$ctrl.answer = $ctrl.answer + '3'">
+                <input type="button" value="+" ng-click="$ctrl.answer = $ctrl.answer + '+'">
+                <br>
+                <input type="button" value="MR" ng-click="$ctrl.memoryRecall()">
+                <input type="button" value="0" ng-click="$ctrl.answer = $ctrl.answer + '0'">
+                <input type="button" value="." ng-click="$ctrl.answer = $ctrl.answer + '.'">
+                <input type="button" value="=" class="equals" ng-click="$ctrl.equals()">
+            </form>
+        </md-card-content>
+    </md-card>
+
+</md-content>

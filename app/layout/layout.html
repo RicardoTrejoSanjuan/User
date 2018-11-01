@@ -1,0 +1,37 @@
+<div md-theme="{{$ctrl.currentTheme}}" layout="row" flex>
+    
+    <!-- <md-sidenav class="md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-xs')">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2 flex md-truncate>Menu</h2>
+            </div>
+        </md-toolbar>
+
+        <md-list>
+            <md-list-item ng-repeat="item in $ctrl.menu">
+                <md-button ng-href="#!/{{item.link}}" layout="row" flex layout-align="start">
+                    <md-icon style="text-align:left" flex="15">{{item.icon}}</md-icon>
+                    <span style="text-align:left" flex>{{item.title}}</span>
+                </md-button>
+            </md-list-item>
+        </md-list>
+
+    </md-sidenav> -->
+
+    <div flex>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <!-- <md-button ng-click="$ctrl.toggleNav()" class="md-icon-button" hide-gt-xs>
+                    <md-icon>menu</md-icon>
+                </md-button> -->
+                <h2 flex md-truncate>App User</h2>
+            </div>
+        </md-toolbar>
+
+        <md-content>
+            <ng-view></ng-view>
+        </md-content>
+
+    </div>
+
+</div>
