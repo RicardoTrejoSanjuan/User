@@ -9,9 +9,9 @@ function layoutCtrl($mdSidenav, $rootScope, $scope) {
     });
 
     vm.menu = [
-        { link: "user", title: "User", icon: "widgets" },
+        { link: "user", title: "List of User", icon: "widgets" },
         { link: "settings", title: "Settings", icon: "settings" },
-        { link: "menu", title: "menu", icon: "menu" }
+        // { link: "menu", title: "menu", icon: "menu" }
     ];
 
     vm.currentTheme = "blue";

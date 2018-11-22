@@ -1,44 +1,37 @@
-<md-subheader class="md-no-sticky">User</md-subheader>
-
+<!-- <md-subheader class="md-no-sticky">List of Users</md-subheader> -->
 <md-content>
-
     <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">List of Users</span>
+            </md-card-title-text>
+        </md-card-title>
+
         <md-card-content layout="column">
-            <form name="calculator">
-                <br>
-                <input type="text" name="answer" ng-model="$ctrl.answer" ng-disabled="true">
-                <br>
-                <input type="button" value="MC" ng-click="$ctrl.memoryClear()">
-                <input type="button" value="M+" ng-click="$ctrl.memoryAdd()">
-                <input type="button" value="M-" ng-click="$ctrl.memorySubtractions()">
-                <input type="button" value="MS" ng-click="$ctrl.memoryStorage()">
-                <br>
-                <input type="button" value="CE" ng-click="$ctrl.clearError()">
-                <input type="button" value="C"  ng-click="$ctrl.clearFunction()">
-                <input type="button" value="<=" ng-click="$ctrl.delete()">
-                <input type="button" value="/" ng-click="$ctrl.answer = $ctrl.answer + '/'"> 
-                <!-- $ctrl.setOperator('/') -->
-                <br>
-                <input type="button" value="7" ng-click="$ctrl.answer = $ctrl.answer + '7'">
-                <input type="button" value="8" ng-click="$ctrl.answer = $ctrl.answer + '8'">
-                <input type="button" value="9" ng-click="$ctrl.answer = $ctrl.answer + '9'">
-                <input type="button" value="X" ng-click="$ctrl.answer = $ctrl.answer + '*'">
-                <br>
-                <input type="button" value="4" ng-click="$ctrl.answer = $ctrl.answer + '4'">
-                <input type="button" value="5" ng-click="$ctrl.answer = $ctrl.answer + '5'">
-                <input type="button" value="6" ng-click="$ctrl.answer = $ctrl.answer + '6'">
-                <input type="button" value="-" ng-click="$ctrl.answer = $ctrl.answer + '-'">
-                <br>
-                <input type="button" value="1" ng-click="$ctrl.answer = $ctrl.answer + '1'">
-                <input type="button" value="2" ng-click="$ctrl.answer = $ctrl.answer + '2'">
-                <input type="button" value="3" ng-click="$ctrl.answer = $ctrl.answer + '3'">
-                <input type="button" value="+" ng-click="$ctrl.answer = $ctrl.answer + '+'">
-                <br>
-                <input type="button" value="MR" ng-click="$ctrl.memoryRecall()">
-                <input type="button" value="0" ng-click="$ctrl.answer = $ctrl.answer + '0'">
-                <input type="button" value="." ng-click="$ctrl.answer = $ctrl.answer + '.'">
-                <input type="button" value="=" class="equals" ng-click="$ctrl.equals()">
-            </form>
+            <md-table-container>
+                <table md-table ng-model="$ctrl.selected" md-progress="promise">
+                    <thead md-head md-order="$ctrl.query.order">
+                        <tr md-row>
+                            <th md-column>Id</th>
+                            <th md-column>Name</th>
+                            <th md-column>Weight</th>
+                            <th md-column>Symbol</th>
+                        </tr>
+                    </thead>
+                    <tbody md-body>
+                        <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="dessert in $ctrl.PeriodicElement">
+                            <td md-cell>{{dessert.position}}</td>
+                            <td md-cell>{{dessert.name}}</td>
+                            <td md-cell>{{dessert.weight}}</td>
+                            <td md-cell>{{dessert.symbol}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+
+            <md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}"
+                md-on-paginate="getDesserts" md-page-select></md-table-pagination>
+
         </md-card-content>
     </md-card>
 

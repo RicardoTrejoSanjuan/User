@@ -1,4 +1,4 @@
-angular.module("app", ["ngRoute", "ngAnimate", "ngAria", "ngMaterial"]);
+angular.module("app", ["ngRoute", "ngAnimate", "ngAria", "ngMaterial", "md.data.table"]);
 
 angular.module("app").config(function ($mdThemingProvider, $mdIconProvider, $provide) {
     $mdIconProvider

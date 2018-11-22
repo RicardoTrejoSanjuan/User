@@ -6,5 +6,5 @@ angular.module("app").config(function ($routeProvider, $locationProvider) {
 
     $routeProvider.when('/menu', { template: "<menu></menu>" });
 
-    $routeProvider.otherwise({ redirectTo: "/menu" });
+    $routeProvider.otherwise({ redirectTo: "/user" });
 });
