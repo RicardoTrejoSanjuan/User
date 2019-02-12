@@ -15,11 +15,14 @@ angular.module("app").config(function ($mdThemingProvider, $mdIconProvider, $pro
     $mdThemingProvider.theme("purple")
         .primaryPalette("deep-purple")
         .accentPalette("red");
+    
+    $mdThemingProvider.theme("grey")
+        .primaryPalette("blue-grey")
+        .accentPalette("red");
 
     $mdThemingProvider.alwaysWatchTheme(true);
 });
 
-//https://docs.angularjs.org/guide/production
 angular.module("app").config(['$compileProvider', function ($compileProvider) {
     $compileProvider.debugInfoEnabled(false);
     $compileProvider.commentDirectivesEnabled(false);

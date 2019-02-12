@@ -9,12 +9,13 @@ function layoutCtrl($mdSidenav, $rootScope, $scope) {
     });
 
     vm.menu = [
-        { link: "user", title: "List of User", icon: "widgets" },
-        { link: "settings", title: "Settings", icon: "settings" },
+        { link: "newuser", title: "Alta Usuarios", icon: "widgets" },
+        { link: "users", title: "Lista de Usuarios", icon: "widgets" },
+        { link: "settings", title: "Configuración", icon: "settings" },
         // { link: "menu", title: "menu", icon: "menu" }
     ];
 
-    vm.currentTheme = "blue";
+    vm.currentTheme = localStorage.getItem("theme") || "blue";
     $scope.$on('update-theme', function (event, args) {
         vm.currentTheme = args;
     });

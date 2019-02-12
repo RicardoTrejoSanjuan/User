@@ -1,15 +1,18 @@
 function settingsCtrl($rootScope) {
     var vm = this;
 
-    vm.themes = ["blue", "green", "purple"];
-    vm.theme = "blue";
+    vm.theme;
+    vm.themes = ["blue", "green", "purple", "grey"];
 
     this.$onInit = function () {
+        vm.theme = localStorage.getItem("theme") || "blue";
+        vm.updateTheme();
     }
 
     vm.updateTheme = function () {
         console.warn("update theme");
         $rootScope.$broadcast("update-theme", vm.theme);
+        localStorage.setItem("theme", vm.theme);
     }
 }
 

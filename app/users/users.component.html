@@ -1,0 +1,152 @@
+<!-- <md-subheader class="md-no-sticky">List of Users</md-subheader> -->
+<md-content>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Lista Usuarios</span>
+            </md-card-title-text>
+        </md-card-title>
+        <!-- <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-button class="md-fab" aria-label="Eat cake">
+                <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
+            </md-button>
+        </section> -->
+        <!-- <md-fab-toolbar md-open="demo.isOpen" count="demo.count" md-direction="left">
+            <md-fab-trigger class="align-with-text">
+                <md-button aria-label="menu" class="md-fab md-primary">
+                    <md-icon md-svg-src="img/icons/menu.svg"></md-icon>
+                </md-button>
+            </md-fab-trigger>
+        </md-fab-toolbar> -->
+        <!-- <md-fab-toolbar md-direction="left">
+                <md-button class="md-raised md-primary" style="width: fit-content;">Agregar Usuario</md-button>
+        </md-fab-toolbar> -->
+        
+        
+
+        <md-card-content layout="column" style="align-items: flex-end;">
+            <md-button ng-disabled="$ctrl.new" class="md-raised md-primary" ng-click="$ctrl.addUser()" style="width: fit-content;">Agregar Usuario</md-button>
+        </md-card-content>
+
+        <md-card-content layout="column">
+            <md-table-container>
+                <table md-table class="table table-report">
+                    <thead md-head>
+                        <tr md-row>
+                            <td md-column ng-repeat="(key, value) in $ctrl.columns">
+                                <div class="item-center">{{value.name}}</div>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody md-body>
+                        <tr md-row ng-repeat="item in $ctrl.data" class="item-center">
+                            <td md-cell class="item-center" style="padding:inherit;">{{item.id}}</td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <div ng-switch="item.update">
+                                    <span ng-switch-when="true">
+                                        <input type="text" placeholder="Nombre" ng-model="item.user">
+                                    </span>
+                                    <span ng-switch-default>
+                                        {{item.user}}
+                                    </span>
+                                </div>
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <div ng-switch="item.update">
+                                    <span ng-switch-when="true">
+                                        <input type="email" placeholder="admin@gmail.com" name="email" ng-model="item.email">
+                                    </span>
+                                    <span ng-switch-default>
+                                        {{item.email}}
+                                    </span>
+                                </div>
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <div ng-switch="item.update">
+                                    <span ng-switch-when="true">
+                                        <select name="status" ng-model="item.sexo">
+                                            <option disabled selected value="">Elige un sexo</option>
+                                            <option ng-repeat="sexo in $ctrl.listSexo" ng-value="sexo.id">{{::sexo.name}}</option>
+                                        </select>
+                                    </span>
+                                    <span ng-switch-default>
+                                        {{$ctrl.returnSexo(item.sexo)}}
+                                    </span>
+                                </div>
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <div ng-switch="item.update">
+                                    <span ng-switch-when="true">
+                                        <select name="status" ng-model="item.status">
+                                            <option disabled selected value="">Elige un estatus</option>
+                                            <option ng-repeat="status in $ctrl.listStatus" ng-value="status.id">{{::status.name}}</option>
+                                        </select>
+                                    </span>
+                                    <span ng-switch-default>
+                                        {{$ctrl.returnStatus(item.status)}}
+                                    </span>
+                                </div>
+                            </td>
+                            
+                            <!-- <td md-cell class="item-center" style="padding:inherit;">
+                                <div ng-switch="item.update">
+                                    <span ng-switch-when="true">
+                                        <input type="date" ng-model="item.date">
+                                    </span>
+                                    <span ng-switch-default>
+                                        {{item.date}}
+                                    </span>
+                                </div>
+                            </td> -->
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <div ng-switch="item.update">
+                                    <span ng-switch-when="true">
+                                        <md-button class="md-primary" ng-click="$ctrl.saveUpdate(item)">Guardar</md-button>
+                                        <md-button class="md-warn" ng-click="$ctrl.cancelEdit(item)">Cancelar</md-button>
+                                    </span>
+                                    <span ng-switch-default>
+                                        <md-button ng-disabled="$ctrl.lock" class="md-primary" ng-click="$ctrl.editItem(item)">Editar</md-button>
+                                        <md-button ng-disabled="$ctrl.lock" class="md-warn">Eliminar</md-button>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr md-row class="item-center" ng-if="$ctrl.new">
+                            <td md-cell></td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <input type="email" ng-required="true" placeholder="admin@gmail.com" name="email" ng-model="$ctrl.newUser.email">
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <input type="text" placeholder="Nombre" ng-model="$ctrl.newUser.user">
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <select name="status" ng-model="$ctrl.newUser.status">
+                                    <option disabled selected value="">Elige un estatus</option>
+                                    <option ng-repeat="status in $ctrl.listStatus" ng-value="status.id">{{::status.name}}</option>
+                                </select>
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <select name="status" ng-model="$ctrl.newUser.sexo">
+                                    <option disabled selected value="">Elige un sexo</option>
+                                    <option ng-repeat="sexo in $ctrl.listSexo" ng-value="sexo.id">{{::sexo.name}}</option>
+                                </select>
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <input type="date" ng-model="$ctrl.newUser.date">
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <md-button class="md-primary" ng-click="$ctrl.saveNewUser()">Guardar</md-button>
+                                <md-button class="md-warn" ng-click="$ctrl.cancelNewUser()">Cancelar</md-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+
+            <!-- <md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}"
+                md-on-paginate="getDesserts" md-page-select></md-table-pagination> -->
+
+        </md-card-content>
+    </md-card>
+
+</md-content>

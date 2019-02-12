@@ -3,6 +3,8 @@
 angular.module("app").service("memory", function ($log) {
   var self = this;
 
+  
+
   // MC
   self.memoryClear = function () {
     localStorage.removeItem("memoryCal");

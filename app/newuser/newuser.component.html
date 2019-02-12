@@ -1,0 +1,244 @@
+<!-- <md-content>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Alta Usuarios</span>
+            </md-card-title-text>
+        </md-card-title> -->
+
+        <!-- <md-card-content layout="column" style="align-items: flex-end;">
+            <md-button ng-disabled="$ctrl.new" class="md-raised md-primary" ng-click="$ctrl.addUser()" style="width: fit-content;">Agregar Usuario</md-button>
+        </md-card-content> -->
+
+        <!-- <md-card-content layout="column">
+            <md-table-container>
+                <table md-table class="table table-report">
+                    <thead md-head>
+                        <tr md-row>
+                            <td md-column ng-repeat="(key, value) in $ctrl.columns">
+                                <div class="item-center">{{value.name}}</div>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody md-body>
+                        <tr md-row ng-repeat="item in $ctrl.data" class="item-center">
+                            <td md-cell class="item-center" style="padding:inherit;">{{item.id}}</td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <div ng-switch="item.update">
+                                    <span ng-switch-when="true">
+                                        <input type="text" placeholder="Nombre" ng-model="item.user">
+                                    </span>
+                                    <span ng-switch-default>
+                                        {{item.user}}
+                                    </span>
+                                </div>
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <div ng-switch="item.update">
+                                    <span ng-switch-when="true">
+                                        <input type="email" placeholder="admin@gmail.com" name="email" ng-model="item.email">
+                                    </span>
+                                    <span ng-switch-default>
+                                        {{item.email}}
+                                    </span>
+                                </div>
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <div ng-switch="item.update">
+                                    <span ng-switch-when="true">
+                                        <select name="status" ng-model="item.sexo">
+                                            <option disabled selected value="">Elige un sexo</option>
+                                            <option ng-repeat="sexo in $ctrl.listSexo" ng-value="sexo.id">{{::sexo.name}}</option>
+                                        </select>
+                                    </span>
+                                    <span ng-switch-default>
+                                        {{$ctrl.returnSexo(item.sexo)}}
+                                    </span>
+                                </div>
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <div ng-switch="item.update">
+                                    <span ng-switch-when="true">
+                                        <select name="status" ng-model="item.status">
+                                            <option disabled selected value="">Elige un estatus</option>
+                                            <option ng-repeat="status in $ctrl.listStatus" ng-value="status.id">{{::status.name}}</option>
+                                        </select>
+                                    </span>
+                                    <span ng-switch-default>
+                                        {{$ctrl.returnStatus(item.status)}}
+                                    </span>
+                                </div>
+                            </td>
+                            
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <div ng-switch="item.update">
+                                    <span ng-switch-when="true">
+                                        <input type="date" ng-model="item.date">
+                                    </span>
+                                    <span ng-switch-default>
+                                        {{item.date}}
+                                    </span>
+                                </div>
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <div ng-switch="item.update">
+                                    <span ng-switch-when="true">
+                                        <md-button class="md-primary" ng-click="$ctrl.saveUpdate(item)">Guardar</md-button>
+                                        <md-button class="md-warn" ng-click="$ctrl.cancelEdit(item)">Cancelar</md-button>
+                                    </span>
+                                    <span ng-switch-default>
+                                        <md-button ng-disabled="$ctrl.lock" class="md-primary" ng-click="$ctrl.editItem(item)">Editar</md-button>
+                                        <md-button ng-disabled="$ctrl.lock" class="md-warn">Eliminar</md-button>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr md-row class="item-center" ng-if="$ctrl.new">
+                            <td md-cell></td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <input type="email" ng-required="true" placeholder="admin@gmail.com" name="email" ng-model="$ctrl.newUser.email">
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <input type="text" placeholder="Nombre" ng-model="$ctrl.newUser.user">
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <select name="status" ng-model="$ctrl.newUser.status">
+                                    <option disabled selected value="">Elige un estatus</option>
+                                    <option ng-repeat="status in $ctrl.listStatus" ng-value="status.id">{{::status.name}}</option>
+                                </select>
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <select name="status" ng-model="$ctrl.newUser.sexo">
+                                    <option disabled selected value="">Elige un sexo</option>
+                                    <option ng-repeat="sexo in $ctrl.listSexo" ng-value="sexo.id">{{::sexo.name}}</option>
+                                </select>
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <input type="date" ng-model="$ctrl.newUser.date">
+                            </td>
+                            <td md-cell class="item-center" style="padding:inherit;">
+                                <md-button class="md-primary" ng-click="$ctrl.saveNewUser()">Guardar</md-button>
+                                <md-button class="md-warn" ng-click="$ctrl.cancelNewUser()">Cancelar</md-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+        </md-card-content>
+    </md-card>
+
+</md-content> -->
+
+<!-- <div ng-controller="AppCtrl" layout="column" ng-cloak> -->
+
+<md-content layout-padding>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Alta de Usuarios</span>
+            </md-card-title-text>
+        </md-card-title>
+
+        <md-card-content layout="column">
+            <form name="newUserForm">
+                <md-input-container class="md-block">
+                    <label>Description</label>
+                    <input md-maxlength="30" required md-no-asterisk name="description" ng-model="project.description">
+                    <div ng-messages="newUserForm.description.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
+                    </div>
+                </md-input-container>
+
+                <div layout="row">
+                    <md-input-container flex="50">
+                        <label>Client Name</label>
+                        <input required name="clientName" ng-model="project.clientName">
+                        <div ng-messages="newUserForm.clientName.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container flex="50">
+                        <label>Project Type</label>
+                        <md-select name="type" ng-model="project.type" required>
+                            <md-option value="app">Application</md-option>
+                            <md-option value="web">Website</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <md-input-container class="md-block">
+                    <label>Client Email</label>
+                    <input required type="email" name="clientEmail" ng-model="project.clientEmail" minlength="10"
+                        maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+
+                    <div ng-messages="newUserForm.clientEmail.$error" role="alert">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                            Your email must be between 10 and 100 characters long and look like an e-mail address.
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Hourly Rate (USD)</label>
+                    <input required type="number" step="any" name="rate" ng-model="project.rate" min="800" max="4999"
+                        ng-pattern="/^1234$/" />
+
+                    <div ng-messages="newUserForm.rate.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                            You've got to charge something! You can't just <b>give away</b> a Missile Defense
+                            System.
+                        </div>
+
+                        <div ng-message="min">
+                            You should charge at least $800 an hour. This job is a big deal... if you mess up,
+                            everyone dies!
+                        </div>
+
+                        <div ng-message="pattern">
+                            You should charge exactly $1,234.
+                        </div>
+
+                        <div ng-message="max">
+                            {{newUserForm.rate.$viewValue | currency:"$":0}} an hour? That's a little ridiculous. I
+                            doubt even Bill Clinton could afford that.
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <md-checkbox name="tos" ng-model="project.tos" required>
+                        I accept the terms of service.
+                    </md-checkbox>
+                    <div ng-messages="newUserForm.tos.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                            You must accept the terms of service before you can proceed.
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <md-switch class="md-primary" name="special" ng-model="project.special" required>
+                        Enable special options.
+                    </md-switch>
+                    <div ng-messages="newUserForm.special.$error" multiple>
+                        <div ng-message="required">
+                            You must enable all special options before you can proceed.
+                        </div>
+                    </div>
+                </md-input-container>
+                <div>
+                    <md-button type="submit">Submit</md-button>
+                </div>
+
+                <p style="font-size:.8em; width: 100%; text-align: center;">
+                    Make sure to include <a href="https://docs.angularjs.org/api/ngMessages" target="_blank">ngMessages</a>
+                    module when using ng-message markup.
+                </p>
+            </form>
+        </md-card-content>
+    </md-card>
+</md-content>
+
+<!-- </div> -->
